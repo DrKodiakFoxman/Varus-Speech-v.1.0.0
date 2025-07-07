@@ -76,7 +76,9 @@ def split_text(text, voice_en, voice_es):
 async def save_audio(text, voice, filename):
     communicate = Communicate(text, voice=voice)
     await communicate.save(filename)
-
+    
 if __name__ == "__main__":
+    import os
     port = int(os.environ.get("PORT", 5050))
     app.run(host="0.0.0.0", port=port)
+
